@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #fdfbf7;
+  --color-text: #2c2c2c;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+html {
+  background: var(--color-bg);
+}
+
+body {
+  color: var(--color-text);
+  background: var(--color-bg);
+  font-feature-settings: "ss01" 1;
+}
+
+::selection {
+  background: #d47a55;
+  color: #fdfbf7;
+}
+
+:focus-visible {
+  outline: 2px solid #b15f3d;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Editorial eyebrow label */
+.eyebrow {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #b15f3d;
+}
+
+/* Signature underline mark, drawn once, used under section titles */
+.mark-underline {
+  display: block;
+  overflow: visible;
+}
+
+.mark-underline path {
+  stroke-dasharray: 240;
+  stroke-dashoffset: 240;
+  animation: draw-mark 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mark-underline path {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes draw-mark {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Masonry grid for the Pinterest-style post index */
+.masonry {
+  column-gap: 1.5rem;
+  column-count: 1;
+}
+
+@media (min-width: 640px) {
+  .masonry {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .masonry {
+    column-count: 3;
+  }
+}
+
+.masonry > * {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+}
+
+.prose-decor {
+  color: #2c2c2c;
+}
+
+.prose-decor p {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+  line-height: 1.85;
+  color: #4a4642;
+}
+
+.prose-decor h2 {
+  font-family: var(--font-display), serif;
+  font-size: 1.75rem;
+  margin-top: 2.4em;
+  margin-bottom: 0.6em;
+  color: #2c2c2c;
+  font-weight: 500;
+}
+
+.prose-decor h3 {
+  font-family: var(--font-display), serif;
+  font-size: 1.35rem;
+  margin-top: 1.8em;
+  margin-bottom: 0.5em;
+  color: #2c2c2c;
+  font-weight: 500;
+}
+
+.prose-decor ul {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+  padding-left: 1.25em;
+  color: #4a4642;
+}
+
+.prose-decor li {
+  margin-top: 0.5em;
+  list-style: none;
+  position: relative;
+  padding-left: 1.4em;
+}
+
+.prose-decor li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 6px;
+  height: 6px;
+  background: #d47a55;
+  border-radius: 999px;
+}
+
+.prose-decor blockquote {
+  font-family: var(--font-display), serif;
+  font-size: 1.4rem;
+  font-style: italic;
+  color: #b15f3d;
+  border-left: 2px solid #d47a55;
+  padding-left: 1.25em;
+  margin: 2em 0;
+}
+
+.prose-decor strong {
+  color: #2c2c2c;
+  font-weight: 600;
+}
