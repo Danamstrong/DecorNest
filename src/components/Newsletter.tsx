@@ -2,20 +2,54 @@
 
 import { useState, FormEvent } from "react";
 
+type Status = "idle" | "loading" | "success" | "error";
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 export default function Newsletter({ compact = false }: { compact?: boolean }) {
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [status, setStatus] = useState<Status>("idle");
+  const [message, setMessage] = useState("");
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    if (!isValid) {
+    const address = email.trim();
+
+    if (!EMAIL_RE.test(address)) {
       setStatus("error");
+      setMessage("That email doesn’t look quite right.");
       return;
     }
-    setStatus("success");
-    setEmail("");
+
+    setStatus("loading");
+    setMessage("");
+
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: address }),
+      });
+      const data = (await res.json().catch(() => ({}))) as {
+        error?: string;
+      };
+
+      if (!res.ok) {
+        setStatus("error");
+        setMessage(data.error ?? "Something went wrong. Please try again.");
+        return;
+      }
+
+      setStatus("success");
+      setMessage("You’re on the list — check your inbox for a welcome note.");
+      setEmail("");
+    } catch {
+      setStatus("error");
+      setMessage("Couldn’t reach the server. Please try again.");
+    }
   }
+
+  const busy = status === "loading";
 
   return (
     <div>
@@ -33,31 +67,32 @@ export default function Newsletter({ compact = false }: { compact?: boolean }) {
           id="newsletter-email"
           type="email"
           required
+          disabled={busy}
           value={email}
           onChange={(e) => {
             setEmail(e.target.value);
-            if (status !== "idle") setStatus("idle");
+            if (status === "error" || status === "success") {
+              setStatus("idle");
+              setMessage("");
+            }
           }}
           placeholder="you@email.com"
-          className="w-full rounded-full border border-charcoal/15 bg-cream px-4 py-2.5 text-sm text-charcoal placeholder:text-ink/50 focus:border-terracotta"
+          className="w-full rounded-full border border-charcoal/15 bg-cream px-4 py-2.5 text-sm text-charcoal placeholder:text-ink/50 focus:border-terracotta disabled:opacity-60"
         />
         <button
           type="submit"
-          className="whitespace-nowrap rounded-full bg-terracotta px-5 py-2.5 text-sm font-medium text-cream transition-colors duration-200 ease-soft hover:bg-terracotta-dark"
+          disabled={busy}
+          className="whitespace-nowrap rounded-full bg-terracotta px-5 py-2.5 text-sm font-medium text-cream transition-colors duration-200 ease-soft hover:bg-terracotta-dark disabled:cursor-not-allowed disabled:opacity-60"
         >
-          Subscribe
+          {busy ? "Subscribing…" : "Subscribe"}
         </button>
       </form>
       <div aria-live="polite" className="mt-2 min-h-[1.25rem] text-xs">
         {status === "success" && (
-          <span className="text-sage-dark">
-            You&rsquo;re on the list — welcome in.
-          </span>
+          <span className="text-sage-dark">{message}</span>
         )}
         {status === "error" && (
-          <span className="text-terracotta-dark">
-            That email doesn&rsquo;t look quite right.
-          </span>
+          <span className="text-terracotta-dark">{message}</span>
         )}
       </div>
     </div>
