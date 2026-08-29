@@ -58,6 +58,65 @@ export default function AboutPage() {
               and writes down what actually worked once the styling photos
               were put away and real life moved back in.
             </p>
+
+            <dl className="mt-8 grid grid-cols-3 gap-4 border-t border-charcoal/10 pt-6">
+              <div>
+                <dt className="eyebrow !text-[0.62rem]">Writing since</dt>
+                <dd className="mt-1 font-display text-2xl font-medium text-charcoal">2021</dd>
+              </div>
+              <div>
+                <dt className="eyebrow !text-[0.62rem]">Apartments redone</dt>
+                <dd className="mt-1 font-display text-2xl font-medium text-charcoal">6</dd>
+              </div>
+              <div>
+                <dt className="eyebrow !text-[0.62rem]">Posts published</dt>
+                <dd className="mt-1 font-display text-2xl font-medium text-charcoal">180+</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-content px-5 py-16 sm:px-8">
+        <SectionHeading eyebrow="Why trust this journal" title="Editorial background" />
+        <div className="mt-10 grid gap-8 sm:grid-cols-3">
+          <div>
+            <h3 className="font-display text-xl font-medium text-charcoal">
+              Experience
+            </h3>
+            <p className="mt-2 text-sm leading-relaxed text-ink">
+              Every recommendation comes out of a real apartment: mine.
+              I&rsquo;ve rented and decorated six spaces since 2019, from a
+              320-square-foot studio to a two-bedroom with genuinely
+              terrible lighting, and posts are written from what actually
+              worked in one of them.
+            </p>
+          </div>
+          <div>
+            <h3 className="font-display text-xl font-medium text-charcoal">
+              Process
+            </h3>
+            <p className="mt-2 text-sm leading-relaxed text-ink">
+              I studied visual merchandising before moving into writing, and
+              every product mentioned on DecorNest is either something I&rsquo;ve
+              owned and used for at least a month, or something I&rsquo;ve
+              researched in depth across manufacturer specs and independent
+              reviews before recommending it.
+            </p>
+          </div>
+          <div>
+            <h3 className="font-display text-xl font-medium text-charcoal">
+              Transparency
+            </h3>
+            <p className="mt-2 text-sm leading-relaxed text-ink">
+              DecorNest is reader-supported through affiliate links — full
+              details are on the{" "}
+              <Link href="/disclaimer" className="text-terracotta underline decoration-terracotta/40 underline-offset-4">
+                disclosure page
+              </Link>
+              . Commission never decides what gets recommended; a product
+              earns its place first, and a link is added second.
+            </p>
           </div>
         </div>
       </section>
@@ -108,6 +167,54 @@ export default function AboutPage() {
             <SceneIllustration variant="window" className="aspect-square rounded-2xl" />
           </div>
         </div>
+      </section>
+
+      <section className="mx-auto max-w-content px-5 py-20 sm:px-8">
+        <SectionHeading eyebrow="How products get chosen" title="Product selection guidelines" />
+        <ol className="mt-10 grid gap-6 sm:grid-cols-2">
+          <li className="rounded-2xl bg-surface p-6">
+            <span className="eyebrow">01</span>
+            <p className="mt-2 font-display text-lg font-medium text-charcoal">
+              Used first, written about second
+            </p>
+            <p className="mt-1.5 text-sm leading-relaxed text-ink">
+              Wherever possible, a product is bought and lived with for at
+              least a few weeks before it appears in a post.
+            </p>
+          </li>
+          <li className="rounded-2xl bg-surface p-6">
+            <span className="eyebrow">02</span>
+            <p className="mt-2 font-display text-lg font-medium text-charcoal">
+              Multiple price points, always
+            </p>
+            <p className="mt-1.5 text-sm leading-relaxed text-ink">
+              Every roundup aims to include at least one budget-friendly
+              option, since not every reader is renovating with the same
+              budget.
+            </p>
+          </li>
+          <li className="rounded-2xl bg-surface p-6">
+            <span className="eyebrow">03</span>
+            <p className="mt-2 font-display text-lg font-medium text-charcoal">
+              No pay-to-play placement
+            </p>
+            <p className="mt-1.5 text-sm leading-relaxed text-ink">
+              Brands cannot pay for a favorable mention. Paid partnerships,
+              when they happen, are labeled clearly and kept separate from
+              independent picks.
+            </p>
+          </li>
+          <li className="rounded-2xl bg-surface p-6">
+            <span className="eyebrow">04</span>
+            <p className="mt-2 font-display text-lg font-medium text-charcoal">
+              Reviewed on a schedule
+            </p>
+            <p className="mt-1.5 text-sm leading-relaxed text-ink">
+              Product roundups are revisited periodically so discontinued or
+              meaningfully changed items get updated or removed.
+            </p>
+          </li>
+        </ol>
       </section>
 
       <section className="mx-auto max-w-content px-5 py-20 text-center sm:px-8">
