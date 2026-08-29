@@ -74,12 +74,21 @@ export default function Footer() {
 
         <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-charcoal/10 pt-6 text-xs text-ink sm:flex-row sm:items-center">
           <p>© {new Date().getFullYear()} DecorNest. All rights reserved.</p>
-          <div className="flex gap-6">
-            <Link href="/privacy-policy" className="hover:text-terracotta">
-              Privacy Policy
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
+            <Link href="/about" className="hover:text-terracotta">
+              About Me
             </Link>
             <Link href="/contact" className="hover:text-terracotta">
               Contact
+            </Link>
+            <Link href="/privacy-policy" className="hover:text-terracotta">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="hover:text-terracotta">
+              Terms of Service
+            </Link>
+            <Link href="/disclaimer" className="hover:text-terracotta">
+              Affiliate Disclaimer
             </Link>
           </div>
         </div>
