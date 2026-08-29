@@ -7,10 +7,9 @@ export const dynamic = "force-dynamic";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-// "onboarding@resend.dev" works with no domain setup but only delivers to the
-// Resend account's own address. Verify the domain and set RESEND_FROM to
-// deliver welcome emails to real subscribers.
-const FROM = process.env.RESEND_FROM ?? `${SITE_NAME} <onboarding@resend.dev>`;
+// Sender address. The fallback requires yourdecornest.com to be verified in
+// Resend; override per-environment with RESEND_FROM.
+const FROM = process.env.RESEND_FROM || "DecorNest <hello@yourdecornest.com>";
 const NOTIFY_TO = process.env.NEWSLETTER_NOTIFICATION_TO;
 
 function welcomeEmail() {
