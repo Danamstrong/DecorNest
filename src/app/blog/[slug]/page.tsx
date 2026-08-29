@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getAllSlugs, getPostBySlug, posts } from "@/lib/posts";
-import SceneIllustration from "@/components/illustrations/SceneIllustration";
+import { getAllSlugs, getPostBySlug, getPostImage, posts } from "@/lib/posts";
+import SceneImage from "@/components/SceneImage";
 import PostBody from "@/components/PostBody";
 import PostCard from "@/components/PostCard";
 import Newsletter from "@/components/Newsletter";
@@ -42,6 +42,8 @@ export default async function BlogPostPage({
   const post = getPostBySlug(slug);
   if (!post) notFound();
 
+  const photo = await getPostImage(post);
+
   const related = posts
     .filter((p) => p.slug !== post.slug && p.category === post.category)
     .slice(0, 3);
@@ -77,10 +79,16 @@ export default async function BlogPostPage({
       </div>
 
       <div className="mx-auto max-w-3xl px-5 pt-10 sm:px-8">
-        <SceneIllustration
-          variant={post.scene}
-          className="aspect-[16/9] w-full rounded-2xl shadow-card"
-        />
+        <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl shadow-card">
+          <SceneImage
+            src={photo.src}
+            alt={photo.alt}
+            credit={photo.credit}
+            showCredit
+            priority
+            sizes="(min-width: 768px) 768px, 100vw"
+          />
+        </div>
       </div>
 
       <div className="mx-auto max-w-3xl px-5 py-12 sm:px-8">
@@ -91,7 +99,8 @@ export default async function BlogPostPage({
           slug={post.slug}
           title={post.title}
           category={post.category}
-          scene={post.scene}
+          image={photo.src}
+          imageAlt={photo.alt}
           description={post.excerpt}
         />
 

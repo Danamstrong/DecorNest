@@ -1,4 +1,5 @@
 import type { Post } from "./types";
+import { getInteriorPhoto, type Photo } from "./unsplash";
 
 export const posts: Post[] = [
   {
@@ -7,7 +8,9 @@ export const posts: Post[] = [
     excerpt:
       "Minimal doesn't have to mean bare. Here's how to keep a small living room open, warm, and unmistakably lived-in.",
     category: "Interior Design",
-    scene: "armchair",
+    imageQuery: "warm minimalist small living room with an armchair",
+    imageAlt:
+      "A warm minimalist living room with a linen armchair, mid-century wooden sideboard, and herringbone floor lit by afternoon sun",
     readingTime: "6 min read",
     date: "2026-06-02",
     featured: true,
@@ -31,7 +34,9 @@ export const posts: Post[] = [
     excerpt:
       "Most counter organizing fails within two weeks. This system is built around how you actually cook, not how a magazine photo looks.",
     category: "Organization",
-    scene: "shelf",
+    imageQuery: "bright organised kitchen counter",
+    imageAlt:
+      "A bright, uncluttered kitchen with a white island, wood cabinetry, and just a few ceramic pieces left out on the counter",
     readingTime: "7 min read",
     date: "2026-05-18",
     featured: true,
@@ -55,7 +60,9 @@ export const posts: Post[] = [
     excerpt:
       "This color pairing isn't a trend cycle — it's a pairing that mimics clay and olive leaves, which is why it never quite goes out of style.",
     category: "Color & Texture",
-    scene: "vase",
+    imageQuery: "terracotta and sage green interior decor",
+    imageAlt:
+      "Round terracotta clay vases on a shelf with a green palm frond falling across them",
     readingTime: "5 min read",
     date: "2026-04-29",
     content: [
@@ -77,7 +84,9 @@ export const posts: Post[] = [
     excerpt:
       "In a studio, every storage solution is also a design decision. These ideas hide function in plain sight.",
     category: "Small Spaces",
-    scene: "closet",
+    imageQuery: "small studio apartment with built-in shelving",
+    imageAlt:
+      "Floor-to-ceiling built-in bookshelves framing a doorway in a compact room, storage built in as architecture",
     readingTime: "8 min read",
     date: "2026-04-10",
     featured: true,
@@ -102,7 +111,9 @@ export const posts: Post[] = [
     excerpt:
       "Seasonal decorating can add warmth without adding a storage problem. Here's how to decorate for fall with restraint.",
     category: "Seasonal",
-    scene: "table",
+    imageQuery: "cozy autumn living room with candles and throw blankets",
+    imageAlt:
+      "A cozy autumn corner with a lit candle, a chunky knit throw, and a terracotta patterned cushion on a linen sofa",
     readingTime: "5 min read",
     date: "2026-09-05",
     content: [
@@ -123,7 +134,9 @@ export const posts: Post[] = [
     excerpt:
       "A short, honest edit of the throw pillow covers actually worth their price this year — no filler picks.",
     category: "Product Edit",
-    scene: "linen",
+    imageQuery: "linen throw pillows on a neutral sofa",
+    imageAlt:
+      "A neutral linen sofa styled with a mix of striped, textured, and tufted throw pillows beside a rustic wood table",
     readingTime: "4 min read",
     date: "2026-03-22",
     content: [
@@ -144,7 +157,9 @@ export const posts: Post[] = [
     excerpt:
       "The best entryways aren't the prettiest ones — they're the ones that still function at 9pm with your arms full of groceries.",
     category: "Interior Design",
-    scene: "window",
+    imageQuery: "entryway with a console table, mirror, and coat hooks",
+    imageAlt:
+      "A real entryway with a glass-paned front door, coat hooks holding a jacket, a round mirror, a slim console table, and shoes on a mat",
     readingTime: "6 min read",
     date: "2026-02-14",
     content: [
@@ -165,7 +180,9 @@ export const posts: Post[] = [
     excerpt:
       "No laser level, no design consultation — just paper templates, a tape measure, and a formula that actually works.",
     category: "Interior Design",
-    scene: "gallery",
+    imageQuery: "professionally styled gallery wall of framed prints",
+    imageAlt:
+      "A densely styled gallery wall of framed prints in mixed colors and sizes, arranged over built-in wood shelving",
     readingTime: "7 min read",
     date: "2026-01-20",
     content: [
@@ -185,6 +202,20 @@ export const posts: Post[] = [
 
 export function getPostBySlug(slug: string) {
   return posts.find((p) => p.slug === slug);
+}
+
+/**
+ * Resolve a post's photo from Unsplash at build time. The post's own
+ * `imageAlt` wins over Unsplash's description; the slug seeds the pick so
+ * each post gets a distinct, stable image. Falls back to a curated photo
+ * when the API is unavailable.
+ */
+export async function getPostImage(
+  post: Pick<Post, "slug" | "imageQuery" | "imageAlt">,
+  width = 1600,
+): Promise<Photo> {
+  const photo = await getInteriorPhoto(post.imageQuery, { seed: post.slug, width });
+  return { ...photo, alt: post.imageAlt };
 }
 
 export function getAllSlugs() {

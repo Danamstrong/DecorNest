@@ -1,6 +1,4 @@
-import SceneIllustration, {
-  type SceneVariant,
-} from "@/components/illustrations/SceneIllustration";
+import SceneImage from "@/components/SceneImage";
 
 const SITE_URL = "https://decornest.example.com";
 
@@ -13,13 +11,15 @@ export default function PinterestShareBlock({
   slug,
   title,
   category,
-  scene,
+  image,
+  imageAlt,
   description,
 }: {
   slug: string;
   title: string;
   category: string;
-  scene: SceneVariant;
+  image: string;
+  imageAlt: string;
   description: string;
 }) {
   const postUrl = `${SITE_URL}/blog/${slug}`;
@@ -31,9 +31,10 @@ export default function PinterestShareBlock({
   return (
     <div className="mt-14 overflow-hidden rounded-2xl border border-charcoal/10 bg-surface sm:flex">
       <div className="relative aspect-[2/3] w-full bg-surface2 sm:w-56 sm:shrink-0">
-        <SceneIllustration
-          variant={scene}
-          className="absolute inset-0 h-full w-full object-cover"
+        <SceneImage
+          src={image}
+          alt={imageAlt}
+          sizes="(min-width: 640px) 224px, 100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-charcoal/10 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 p-4">

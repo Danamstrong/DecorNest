@@ -1,13 +1,41 @@
 import Link from "next/link";
 import { getFeaturedPosts, posts, CATEGORIES } from "@/lib/posts";
+import { getInteriorPhoto } from "@/lib/unsplash";
 import PostCard from "@/components/PostCard";
 import SectionHeading from "@/components/SectionHeading";
 import Newsletter from "@/components/Newsletter";
-import SceneIllustration from "@/components/illustrations/SceneIllustration";
+import SceneImage from "@/components/SceneImage";
 
-export default function HomePage() {
+export default async function HomePage() {
   const featured = getFeaturedPosts();
   const rest = posts.filter((p) => !p.featured).slice(0, 6);
+
+  const [heroPhoto, nookPhoto, tablePhoto, potsPhoto, shelfPhoto, galleryPhoto] =
+    await Promise.all([
+      getInteriorPhoto("calm minimalist living room with sofa and floor lamp", {
+        seed: "home-hero",
+      }),
+      getInteriorPhoto("cozy reading nook armchair by a window", {
+        seed: "home-nook",
+        width: 800,
+      }),
+      getInteriorPhoto("wood dining table under pendant lights", {
+        seed: "home-table",
+        width: 1200,
+      }),
+      getInteriorPhoto("terracotta clay pots earthy tones", {
+        seed: "home-pots",
+        width: 800,
+      }),
+      getInteriorPhoto("styled bookshelf with books and objects", {
+        seed: "home-shelf",
+        width: 800,
+      }),
+      getInteriorPhoto("framed art gallery wall", {
+        seed: "home-gallery",
+        width: 1200,
+      }),
+    ]);
 
   return (
     <>
@@ -45,14 +73,25 @@ export default function HomePage() {
 
           <div className="relative mx-auto w-full max-w-md">
             <div className="absolute -right-4 -top-4 h-full w-full rounded-[28px] bg-terracotta/15 sm:-right-6 sm:-top-6" />
-            <div className="relative overflow-hidden rounded-[28px] shadow-card">
-              <SceneIllustration variant="lamp" className="h-full w-full" />
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[28px] shadow-card">
+              <SceneImage
+                src={heroPhoto.src}
+                alt={heroPhoto.alt}
+                credit={heroPhoto.credit}
+                showCredit
+                priority
+                sizes="(min-width: 1024px) 460px, (min-width: 640px) 60vw, 90vw"
+              />
             </div>
             <div className="absolute -bottom-6 -left-6 hidden w-40 rounded-2xl bg-cream p-3 shadow-card sm:block">
-              <SceneIllustration
-                variant="plant"
-                className="aspect-square w-full rounded-xl"
-              />
+              <div className="relative aspect-square w-full overflow-hidden rounded-xl">
+                <SceneImage
+                  src={nookPhoto.src}
+                  alt={nookPhoto.alt}
+                  credit={nookPhoto.credit}
+                  sizes="160px"
+                />
+              </div>
               <p className="mt-2 px-1 text-[0.65rem] leading-snug text-ink">
                 New this week: reading corners under 40 sq ft
               </p>
@@ -118,10 +157,38 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="grid grid-cols-3 gap-3">
-            <SceneIllustration variant="table" className="col-span-2 aspect-[4/3] rounded-xl" />
-            <SceneIllustration variant="vase" className="aspect-square rounded-xl" />
-            <SceneIllustration variant="closet" className="aspect-square rounded-xl" />
-            <SceneIllustration variant="gallery" className="col-span-2 aspect-[4/3] rounded-xl" />
+            <div className="relative col-span-2 aspect-[4/3] overflow-hidden rounded-xl">
+              <SceneImage
+                src={tablePhoto.src}
+                alt={tablePhoto.alt}
+                credit={tablePhoto.credit}
+                sizes="(min-width: 768px) 380px, 60vw"
+              />
+            </div>
+            <div className="relative aspect-square overflow-hidden rounded-xl">
+              <SceneImage
+                src={potsPhoto.src}
+                alt={potsPhoto.alt}
+                credit={potsPhoto.credit}
+                sizes="(min-width: 768px) 190px, 30vw"
+              />
+            </div>
+            <div className="relative aspect-square overflow-hidden rounded-xl">
+              <SceneImage
+                src={shelfPhoto.src}
+                alt={shelfPhoto.alt}
+                credit={shelfPhoto.credit}
+                sizes="(min-width: 768px) 190px, 30vw"
+              />
+            </div>
+            <div className="relative col-span-2 aspect-[4/3] overflow-hidden rounded-xl">
+              <SceneImage
+                src={galleryPhoto.src}
+                alt={galleryPhoto.alt}
+                credit={galleryPhoto.credit}
+                sizes="(min-width: 768px) 380px, 60vw"
+              />
+            </div>
           </div>
         </div>
       </section>

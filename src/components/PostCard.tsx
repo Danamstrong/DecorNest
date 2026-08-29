@@ -1,17 +1,31 @@
 import Link from "next/link";
 import type { Post } from "@/lib/types";
-import SceneIllustration from "./illustrations/SceneIllustration";
+import { getPostImage } from "@/lib/posts";
+import SceneImage from "./SceneImage";
 
-export default function PostCard({ post, tall = false }: { post: Post; tall?: boolean }) {
+export default async function PostCard({
+  post,
+  tall = false,
+}: {
+  post: Post;
+  tall?: boolean;
+}) {
+  const photo = await getPostImage(post, 900);
+
   return (
     <Link
       href={`/blog/${post.slug}`}
       className="group block overflow-hidden rounded-2xl bg-surface shadow-soft transition-all duration-300 ease-soft hover:-translate-y-1 hover:shadow-card"
     >
-      <div className={`overflow-hidden ${tall ? "aspect-[3/4]" : "aspect-[4/3]"}`}>
-        <SceneIllustration
-          variant={post.scene}
-          className="h-full w-full object-cover transition-transform duration-500 ease-soft group-hover:scale-105"
+      <div
+        className={`relative overflow-hidden ${tall ? "aspect-[3/4]" : "aspect-[4/3]"}`}
+      >
+        <SceneImage
+          src={photo.src}
+          alt={photo.alt}
+          credit={photo.credit}
+          sizes="(min-width: 1024px) 360px, (min-width: 640px) 45vw, 90vw"
+          className="object-cover transition-transform duration-500 ease-soft group-hover:scale-105"
         />
       </div>
       <div className="p-5">
