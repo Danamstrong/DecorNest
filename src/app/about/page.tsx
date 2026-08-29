@@ -3,12 +3,35 @@ import Link from "next/link";
 import SectionHeading from "@/components/SectionHeading";
 import SceneIllustration from "@/components/illustrations/SceneIllustration";
 import Newsletter from "@/components/Newsletter";
+import { posts } from "@/lib/posts";
 
 export const metadata: Metadata = {
   title: "About Me",
   description:
     "The story behind DecorNest, what the journal covers, and why it's built around fewer, better decisions rather than more decor.",
 };
+
+const EDITORIAL = [
+  {
+    title: "Experience",
+    body: "Seven years of writing about home decor and organizing, four rented apartments redone from scratch, and a running habit of testing every product in my own rooms before it earns a mention.",
+  },
+  {
+    title: "Process",
+    body: "Each post starts with a real problem in a real space. I research widely, try the fix myself, wait a few weeks to see whether it actually holds, and only then write it up — with sketches or photos from the space in question.",
+  },
+  {
+    title: "Transparency",
+    body: "Affiliate links are labeled and never decide what gets recommended. Sponsored or gifted items are disclosed at the top of the post. When I get something wrong, the post gets corrected, not quietly deleted.",
+  },
+];
+
+const SELECTION_GUIDELINES = [
+  "Tested before recommending — nothing gets written about until it has been used in a real room long enough to see how it wears.",
+  "Multiple price points included — where it makes sense, a post covers a budget option, a mid-range pick, and one splurge, so the advice works for any budget.",
+  "No pay-to-play placement — brands cannot buy a spot in a post or a higher ranking; sponsorship only ever buys an honest look.",
+  "Reviewed periodically — recommendations are revisited as products change, go out of stock, or stop holding up, and updated or removed accordingly.",
+];
 
 const VALUES = [
   {
@@ -44,7 +67,7 @@ export default function AboutPage() {
               live in.
             </h1>
             <p className="mt-6 text-base leading-relaxed text-ink">
-              I started DecorNest after redoing three rented apartments in a
+              I started DecorNest after redoing four rented apartments in a
               row and getting tired of decor advice that assumed I owned the
               walls, had a full renovation budget, or wanted a home that
               photographed well but felt sterile to actually sit in. This
@@ -58,66 +81,59 @@ export default function AboutPage() {
               and writes down what actually worked once the styling photos
               were put away and real life moved back in.
             </p>
-
-            <dl className="mt-8 grid grid-cols-3 gap-4 border-t border-charcoal/10 pt-6">
-              <div>
-                <dt className="eyebrow !text-[0.62rem]">Writing since</dt>
-                <dd className="mt-1 font-display text-2xl font-medium text-charcoal">2021</dd>
-              </div>
-              <div>
-                <dt className="eyebrow !text-[0.62rem]">Apartments redone</dt>
-                <dd className="mt-1 font-display text-2xl font-medium text-charcoal">6</dd>
-              </div>
-              <div>
-                <dt className="eyebrow !text-[0.62rem]">Posts published</dt>
-                <dd className="mt-1 font-display text-2xl font-medium text-charcoal">180+</dd>
-              </div>
-            </dl>
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-content px-5 py-16 sm:px-8">
-        <SectionHeading eyebrow="Why trust this journal" title="Editorial background" />
+      <section className="border-b border-charcoal/10 bg-surface">
+        <div className="mx-auto grid max-w-content grid-cols-3 gap-4 px-5 py-12 text-center sm:px-8">
+          {[
+            { figure: "7", label: "Years writing about home" },
+            { figure: "4", label: "Apartments redone" },
+            { figure: `${posts.length}`, label: "Posts published" },
+          ].map((stat) => (
+            <div key={stat.label}>
+              <p className="font-display text-4xl font-medium text-terracotta sm:text-5xl">
+                {stat.figure}
+              </p>
+              <p className="mt-2 text-xs leading-relaxed text-ink sm:text-sm">
+                {stat.label}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-content px-5 py-20 sm:px-8">
+        <SectionHeading eyebrow="How this journal works" title="Editorial background" />
         <div className="mt-10 grid gap-8 sm:grid-cols-3">
-          <div>
-            <h3 className="font-display text-xl font-medium text-charcoal">
-              Experience
-            </h3>
-            <p className="mt-2 text-sm leading-relaxed text-ink">
-              Every recommendation comes out of a real apartment: mine.
-              I&rsquo;ve rented and decorated six spaces since 2019, from a
-              320-square-foot studio to a two-bedroom with genuinely
-              terrible lighting, and posts are written from what actually
-              worked in one of them.
-            </p>
-          </div>
-          <div>
-            <h3 className="font-display text-xl font-medium text-charcoal">
-              Process
-            </h3>
-            <p className="mt-2 text-sm leading-relaxed text-ink">
-              I studied visual merchandising before moving into writing, and
-              every product mentioned on DecorNest is either something I&rsquo;ve
-              owned and used for at least a month, or something I&rsquo;ve
-              researched in depth across manufacturer specs and independent
-              reviews before recommending it.
-            </p>
-          </div>
-          <div>
-            <h3 className="font-display text-xl font-medium text-charcoal">
-              Transparency
-            </h3>
-            <p className="mt-2 text-sm leading-relaxed text-ink">
-              DecorNest is reader-supported through affiliate links — full
-              details are on the{" "}
-              <Link href="/disclaimer" className="text-terracotta underline decoration-terracotta/40 underline-offset-4">
-                disclosure page
-              </Link>
-              . Commission never decides what gets recommended; a product
-              earns its place first, and a link is added second.
-            </p>
-          </div>
+          {EDITORIAL.map((item) => (
+            <div key={item.title} className="border-t border-charcoal/15 pt-5">
+              <h3 className="font-display text-xl font-medium text-charcoal">
+                {item.title}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-ink">{item.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="border-t border-charcoal/10 bg-surface">
+        <div className="mx-auto max-w-content px-5 py-20 sm:px-8">
+          <SectionHeading
+            eyebrow="How products get picked"
+            title="Product selection guidelines"
+          />
+          <ol className="mt-10 space-y-6">
+            {SELECTION_GUIDELINES.map((text, i) => (
+              <li key={i} className="flex gap-4">
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-terracotta/15 font-display text-lg font-medium text-terracotta-dark">
+                  {i + 1}
+                </span>
+                <p className="pt-1 text-sm leading-relaxed text-ink">{text}</p>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
@@ -167,54 +183,6 @@ export default function AboutPage() {
             <SceneIllustration variant="window" className="aspect-square rounded-2xl" />
           </div>
         </div>
-      </section>
-
-      <section className="mx-auto max-w-content px-5 py-20 sm:px-8">
-        <SectionHeading eyebrow="How products get chosen" title="Product selection guidelines" />
-        <ol className="mt-10 grid gap-6 sm:grid-cols-2">
-          <li className="rounded-2xl bg-surface p-6">
-            <span className="eyebrow">01</span>
-            <p className="mt-2 font-display text-lg font-medium text-charcoal">
-              Used first, written about second
-            </p>
-            <p className="mt-1.5 text-sm leading-relaxed text-ink">
-              Wherever possible, a product is bought and lived with for at
-              least a few weeks before it appears in a post.
-            </p>
-          </li>
-          <li className="rounded-2xl bg-surface p-6">
-            <span className="eyebrow">02</span>
-            <p className="mt-2 font-display text-lg font-medium text-charcoal">
-              Multiple price points, always
-            </p>
-            <p className="mt-1.5 text-sm leading-relaxed text-ink">
-              Every roundup aims to include at least one budget-friendly
-              option, since not every reader is renovating with the same
-              budget.
-            </p>
-          </li>
-          <li className="rounded-2xl bg-surface p-6">
-            <span className="eyebrow">03</span>
-            <p className="mt-2 font-display text-lg font-medium text-charcoal">
-              No pay-to-play placement
-            </p>
-            <p className="mt-1.5 text-sm leading-relaxed text-ink">
-              Brands cannot pay for a favorable mention. Paid partnerships,
-              when they happen, are labeled clearly and kept separate from
-              independent picks.
-            </p>
-          </li>
-          <li className="rounded-2xl bg-surface p-6">
-            <span className="eyebrow">04</span>
-            <p className="mt-2 font-display text-lg font-medium text-charcoal">
-              Reviewed on a schedule
-            </p>
-            <p className="mt-1.5 text-sm leading-relaxed text-ink">
-              Product roundups are revisited periodically so discontinued or
-              meaningfully changed items get updated or removed.
-            </p>
-          </li>
-        </ol>
       </section>
 
       <section className="mx-auto max-w-content px-5 py-20 text-center sm:px-8">

@@ -3,112 +3,129 @@ import SectionHeading from "@/components/SectionHeading";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
-  description: "The terms and conditions governing use of the DecorNest website.",
+  description:
+    "The terms that govern your use of DecorNest, including content usage, intellectual property, and affiliate links.",
 };
 
 export default function TermsPage() {
   return (
     <div className="mx-auto max-w-3xl px-5 py-16 sm:px-8">
       <SectionHeading eyebrow="Legal" title="Terms of Service" />
-      <p className="mt-4 text-sm text-ink">Last updated: August 26, 2026</p>
+      <p className="mt-4 text-sm text-ink">Last updated: August 29, 2026</p>
 
       <div className="prose-decor mt-10">
         <p>
-          These Terms of Service (&ldquo;Terms&rdquo;) govern your use of
-          DecorNest (&ldquo;the site,&rdquo; &ldquo;we,&rdquo; or
-          &ldquo;us&rdquo;). By visiting or using this site, you agree to
-          these Terms. This is a template — replace the placeholders below
-          with your business details and have it reviewed by a legal
-          professional before publishing to a live site.
+          These Terms of Service (&ldquo;Terms&rdquo;) govern your access to and
+          use of DecorNest (&ldquo;DecorNest,&rdquo; &ldquo;we,&rdquo;
+          &ldquo;us,&rdquo; or &ldquo;this site&rdquo;). By visiting the site or
+          using any of its content, you agree to these Terms. If you do not
+          agree, please stop using the site. This is a template — replace the
+          placeholders with your own details and have it reviewed before
+          publishing to a live site.
         </p>
 
-        <h2>Use of the site</h2>
+        <h2>Using the site</h2>
         <p>
-          DecorNest is provided for personal, non-commercial use. You agree
-          to use the site only for lawful purposes and in a way that doesn&rsquo;t
-          infringe on the rights of, or restrict or inhibit the use and
-          enjoyment of, the site by any third party.
+          DecorNest is provided for personal, non-commercial reading. You may
+          browse the site, share links to articles, and quote short excerpts
+          with attribution and a link back to the original post. You agree not
+          to:
         </p>
         <ul>
-          <li>You must not attempt to gain unauthorized access to any part of the site</li>
-          <li>You must not use automated systems to scrape or republish content in bulk</li>
-          <li>You must not use the site to distribute spam, malware, or unlawful content</li>
+          <li>Republish or redistribute articles in full without written permission</li>
+          <li>Use automated tools to scrape, mirror, or bulk-download the site</li>
+          <li>Attempt to disrupt, overload, or gain unauthorized access to the site or its infrastructure</li>
+          <li>Use the site or its content in any way that is unlawful or infringes the rights of others</li>
         </ul>
 
         <h2>Intellectual property</h2>
         <p>
-          Unless otherwise stated, all text, graphics, illustrations, logos,
-          and design elements on DecorNest are the property of DecorNest or
-          its licensors and are protected by copyright and other
-          intellectual property laws.
+          All content on DecorNest — including articles, illustrations,
+          photographs, layout, and the DecorNest name and logo — is owned by
+          DecorNest or its licensors and is protected by copyright and other
+          intellectual property laws. Nothing in these Terms transfers any
+          ownership right to you. Requests to license or reuse content can be
+          sent through the{" "}
+          <a
+            href="/contact"
+            className="text-terracotta underline decoration-terracotta/40 underline-offset-4"
+          >
+            contact page
+          </a>
+          .
         </p>
-        <ul>
-          <li>
-            You may share links to DecorNest posts and quote brief excerpts
-            with proper attribution and a link back to the original post.
-          </li>
-          <li>
-            You may not reproduce, republish, or redistribute substantial
-            portions of any post, image, or illustration without prior
-            written permission.
-          </li>
-          <li>
-            Product names, brand names, and trademarks mentioned on the site
-            belong to their respective owners.
-          </li>
-        </ul>
 
         <h2>Content accuracy</h2>
         <p>
-          We aim to keep information on DecorNest accurate and up to date,
-          but home decor advice, product availability, and pricing can
-          change without notice. Content is provided &ldquo;as is&rdquo;
-          without warranties of any kind, and we don&rsquo;t guarantee that
-          any product, technique, or recommendation will suit your specific
-          space, budget, or circumstances.
+          DecorNest publishes opinion, design guidance, and product commentary
+          based on our own experience. We work to keep information accurate and
+          current, but we make no warranty that any article is complete,
+          error-free, or suitable for your specific home, budget, or situation.
+          Prices, availability, and product details change frequently and may be
+          out of date by the time you read a post. Always confirm details with
+          the retailer or manufacturer, and use your own judgement — and, where
+          relevant, a qualified professional — before acting on anything you
+          read here.
         </p>
 
-        <h2>Affiliate links and third-party sites</h2>
+        <h2>Affiliate links</h2>
         <p>
-          DecorNest contains affiliate links and links to third-party
-          websites. See our{" "}
-          <a href="/disclaimer" className="text-terracotta underline decoration-terracotta/40 underline-offset-4">
-            Affiliate Disclaimer
+          Some posts contain affiliate links. If you click one and make a
+          purchase, we may earn a commission at no additional cost to you.
+          Commissions never influence which products we recommend or what we say
+          about them. Full details are on the{" "}
+          <a
+            href="/disclaimer"
+            className="text-terracotta underline decoration-terracotta/40 underline-offset-4"
+          >
+            Affiliate &amp; Earnings Disclosure
           </a>{" "}
-          for details. We are not responsible for the content, accuracy, or
-          practices of any third-party site linked from DecorNest.
+          page.
+        </p>
+
+        <h2>Third-party links</h2>
+        <p>
+          Articles may link to third-party websites for reference. We do not
+          control those sites and are not responsible for their content,
+          products, or privacy practices. Visiting a linked site is at your own
+          risk and subject to that site&rsquo;s own terms.
         </p>
 
         <h2>Limitation of liability</h2>
         <p>
-          To the fullest extent permitted by law, DecorNest and its author
-          are not liable for any direct, indirect, incidental, or
-          consequential damages arising from your use of the site,
-          including but not limited to purchases made based on content
-          published here, or reliance on any advice, recommendation, or
-          instruction found on the site.
+          To the fullest extent permitted by law, DecorNest and anyone
+          associated with it will not be liable for any indirect, incidental,
+          or consequential damages arising from your use of the site or your
+          reliance on its content, including any purchasing decision, design
+          choice, or home project. The site is provided &ldquo;as is&rdquo; and
+          &ldquo;as available&rdquo; without warranties of any kind.
         </p>
 
-        <h2>Changes to these terms</h2>
+        <h2>Changes to the site and these Terms</h2>
         <p>
-          These Terms may be updated periodically. Continued use of the site
-          after changes are posted constitutes acceptance of the revised
-          Terms. The &ldquo;last updated&rdquo; date at the top of this page
-          reflects the most recent revision.
+          We may change, suspend, or discontinue any part of the site at any
+          time. We may also update these Terms from time to time; the &ldquo;last
+          updated&rdquo; date above reflects the most recent revision, and your
+          continued use of the site after a change means you accept the revised
+          Terms.
         </p>
 
         <h2>Governing law</h2>
         <p>
           These Terms are governed by the laws of the jurisdiction in which
-          DecorNest&rsquo;s owner operates, without regard to conflict-of-law
-          principles. Replace this section with your specific jurisdiction
-          before publishing.
+          DecorNest is operated, without regard to its conflict-of-law rules.
+          Any dispute relating to the site or these Terms will be handled in the
+          courts of that jurisdiction. Replace this section with your actual
+          governing jurisdiction before publishing.
         </p>
 
         <h2>Contact</h2>
         <p>
           Questions about these Terms can be sent through the{" "}
-          <a href="/contact" className="text-terracotta underline decoration-terracotta/40 underline-offset-4">
+          <a
+            href="/contact"
+            className="text-terracotta underline decoration-terracotta/40 underline-offset-4"
+          >
             contact page
           </a>
           .

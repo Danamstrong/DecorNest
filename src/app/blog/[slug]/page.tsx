@@ -9,8 +9,6 @@ import Newsletter from "@/components/Newsletter";
 import AffiliateDisclosure from "@/components/AffiliateDisclosure";
 import PinterestShareBlock from "@/components/PinterestShareBlock";
 
-const SITE_URL = "https://decor-nest-eta.vercel.app";
-
 export function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }));
 }
@@ -87,14 +85,14 @@ export default async function BlogPostPage({
 
       <div className="mx-auto max-w-3xl px-5 py-12 sm:px-8">
         <AffiliateDisclosure />
-
         <PostBody blocks={post.content} />
 
         <PinterestShareBlock
+          slug={post.slug}
           title={post.title}
           category={post.category}
           scene={post.scene}
-          url={`${SITE_URL}/blog/${post.slug}`}
+          description={post.excerpt}
         />
 
         <div className="mt-14 rounded-2xl bg-surface p-6 sm:p-8">

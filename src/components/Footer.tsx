@@ -78,9 +78,6 @@ export default function Footer() {
             <Link href="/about" className="hover:text-terracotta">
               About Me
             </Link>
-            <Link href="/contact" className="hover:text-terracotta">
-              Contact
-            </Link>
             <Link href="/privacy-policy" className="hover:text-terracotta">
               Privacy Policy
             </Link>
@@ -89,6 +86,9 @@ export default function Footer() {
             </Link>
             <Link href="/disclaimer" className="hover:text-terracotta">
               Affiliate Disclaimer
+            </Link>
+            <Link href="/contact" className="hover:text-terracotta">
+              Contact
             </Link>
           </div>
         </div>

@@ -2,75 +2,89 @@ import type { Metadata } from "next";
 import SectionHeading from "@/components/SectionHeading";
 
 export const metadata: Metadata = {
-  title: "Affiliate Disclaimer",
-  description: "How DecorNest uses affiliate links and earns commissions on qualifying purchases.",
+  title: "Affiliate & Earnings Disclosure",
+  description:
+    "How DecorNest earns money through affiliate programs, and why commissions never decide what gets recommended.",
 };
 
 export default function DisclaimerPage() {
   return (
     <div className="mx-auto max-w-3xl px-5 py-16 sm:px-8">
       <SectionHeading eyebrow="Legal" title="Affiliate & Earnings Disclosure" />
-      <p className="mt-4 text-sm text-ink">Last updated: August 26, 2026</p>
+      <p className="mt-4 text-sm text-ink">Last updated: August 29, 2026</p>
 
       <div className="prose-decor mt-10">
         <p>
-          DecorNest is reader-supported. This page explains, in plain terms,
-          how that works and what it means for you as a reader. This is a
-          template disclosure — replace the placeholders below with your
-          actual affiliate programs and have it reviewed before publishing to
-          a live site.
-        </p>
-
-        <h2>What that means</h2>
-        <p>
-          Some links on this site are affiliate links. That means if you
-          click through and make a qualifying purchase, DecorNest may earn a
-          small commission from the retailer or program — at no extra cost
-          to you. The price you pay stays exactly the same whether or not
-          you use our link.
+          DecorNest is reader-supported. Some of the links in our articles are
+          affiliate links, which means that if you click one and buy something,
+          we may earn a commission &mdash; at no extra cost to you. The price
+          you pay is exactly the same whether you use our link or go to the
+          retailer directly.
         </p>
 
         <h2>Programs we participate in</h2>
-        <p>DecorNest is currently a participant in affiliate programs including:</p>
+        <p>
+          DecorNest is a participant in affiliate advertising programs designed
+          to provide a way for sites to earn fees by linking to retailers. This
+          currently includes:
+        </p>
         <ul>
           <li>
-            <strong>Amazon Associates</strong> — as an Amazon Associate, we
-            earn from qualifying purchases made through Amazon links on this
-            site.
+            <strong>Amazon Associates</strong> &mdash; DecorNest is a
+            participant in the Amazon Services LLC Associates Program, an
+            affiliate advertising program designed to provide a means for sites
+            to earn advertising fees by advertising and linking to Amazon.com.
+            As an Amazon Associate we earn from qualifying purchases.
           </li>
           <li>
-            <strong>LTK (LikeToKnow.it)</strong> — used for product edits and
-            shoppable roundups linked from posts and social content.
+            <strong>LTK (LiketoKnow.it)</strong> &mdash; some product
+            recommendations are shared through LTK, which pays a commission on
+            qualifying purchases made through those links.
+          </li>
+          <li>
+            <strong>Other brand and retailer programs</strong> &mdash; from time
+            to time we may join additional affiliate programs for retailers
+            whose products we already recommend. This page will be updated when
+            that happens.
           </li>
         </ul>
-        <p>
-          If we add or remove a program, this page will be updated to reflect
-          the current list.
-        </p>
 
-        <h2>How this affects what gets recommended</h2>
+        <h2>How recommendations are actually chosen</h2>
         <p>
-          Commission potential never decides what makes it into a post.
-          Products are chosen first, and an affiliate link is added only if
-          one is available for something already worth recommending. If a
-          product isn&rsquo;t good enough to mention without a link, it
-          isn&rsquo;t good enough to mention with one either.
+          Commission never decides what gets recommended. Products are included
+          because they held up in real use, solve the problem the article is
+          about, and are something we would tell a friend to buy. If the best
+          answer to a question is a product we earn nothing on &mdash; or no
+          product at all &mdash; that is what the article says.
         </p>
+        <ul>
+          <li>We do not accept payment to place a product in a post or to rank it higher.</li>
+          <li>We link to the retailer that makes the most sense for the reader, not the one with the highest commission.</li>
+          <li>When a product no longer holds up, we update or remove the recommendation, regardless of whether it earns.</li>
+        </ul>
 
         <h2>Sponsored content</h2>
         <p>
-          On the rare occasion a post or product is part of a paid
-          partnership rather than a standard affiliate link, it will be
-          clearly labeled as sponsored or as a paid partnership at the top of
-          that post. Everything else reflects independent, unpaid
-          recommendations.
+          On the rare occasion a post is sponsored or includes a gifted product,
+          it is labeled clearly at the top of that post. Sponsorship buys a
+          brand an honest look, never a guaranteed verdict.
+        </p>
+
+        <h2>Your support</h2>
+        <p>
+          Using our links when a recommendation is useful to you is the main way
+          DecorNest stays free to read, with no paywall. Thank you &mdash; it
+          genuinely makes this work possible.
         </p>
 
         <h2>Questions</h2>
         <p>
-          Questions about a specific link, program, or disclosure can be sent
-          through the{" "}
-          <a href="/contact" className="text-terracotta underline decoration-terracotta/40 underline-offset-4">
+          Anything unclear about how DecorNest earns money can be sent through
+          the{" "}
+          <a
+            href="/contact"
+            className="text-terracotta underline decoration-terracotta/40 underline-offset-4"
+          >
             contact page
           </a>
           .
