@@ -1,6 +1,5 @@
 import SceneImage from "@/components/SceneImage";
-
-const SITE_URL = "https://decornest.example.com";
+import { SITE_URL } from "@/lib/site";
 
 /**
  * End-of-post save card. Renders a 2:3 pin-friendly graphic (title + category

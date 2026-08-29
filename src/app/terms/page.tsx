@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Terms of Service",
   description:
     "The terms that govern your use of DecorNest, including content usage, intellectual property, and affiliate links.",
+  alternates: {
+    canonical: "/terms",
+  },
 };
 
 export default function TermsPage() {

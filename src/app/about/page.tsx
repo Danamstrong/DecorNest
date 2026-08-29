@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "About Me",
   description:
     "The story behind DecorNest, what the journal covers, and why it's built around fewer, better decisions rather than more decor.",
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 const EDITORIAL = [

@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Blog",
   description:
     "Every DecorNest post on interior design, organization, product edits, color, small spaces, and seasonal decor.",
+  alternates: {
+    canonical: "/blog",
+  },
 };
 
 export default async function BlogIndexPage({

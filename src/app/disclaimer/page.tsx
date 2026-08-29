@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Affiliate & Earnings Disclosure",
   description:
     "How DecorNest earns money through affiliate programs, and why commissions never decide what gets recommended.",
+  alternates: {
+    canonical: "/disclaimer",
+  },
 };
 
 export default function DisclaimerPage() {

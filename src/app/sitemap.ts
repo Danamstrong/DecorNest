@@ -1,18 +1,23 @@
 import type { MetadataRoute } from "next";
 import { getAllSlugs } from "@/lib/posts";
-
-const BASE_URL = "https://decornest.example.com";
+import { SITE_URL } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/blog", "/about", "/contact", "/privacy-policy"].map(
-    (path) => ({
-      url: `${BASE_URL}${path}`,
-      lastModified: new Date(),
-    })
-  );
+  const staticRoutes = [
+    "",
+    "/blog",
+    "/about",
+    "/contact",
+    "/privacy-policy",
+    "/terms",
+    "/disclaimer",
+  ].map((path) => ({
+    url: `${SITE_URL}${path}`,
+    lastModified: new Date(),
+  }));
 
   const postRoutes = getAllSlugs().map((slug) => ({
-    url: `${BASE_URL}/blog/${slug}`,
+    url: `${SITE_URL}/blog/${slug}`,
     lastModified: new Date(),
   }));
 

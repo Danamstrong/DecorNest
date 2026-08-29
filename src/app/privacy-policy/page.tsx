@@ -4,6 +4,9 @@ import SectionHeading from "@/components/SectionHeading";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "How DecorNest collects, uses, and protects visitor data.",
+  alternates: {
+    canonical: "/privacy-policy",
+  },
 };
 
 export default function PrivacyPolicyPage() {
