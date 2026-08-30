@@ -48,6 +48,9 @@ export const metadata: Metadata = {
     // Token only — Next renders the <meta name="google-site-verification"> tag.
     google: "CLftxND8VPrU0nqWW_IAlG17WbpOj-L-7GyFIfwQrBs",
   },
+  other: {
+    "impact-site-verification": "b0235332-5ae2-408c-9b85-190ee66831c1",
+  },
 };
 
 export default function RootLayout({
