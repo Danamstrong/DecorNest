@@ -43,6 +43,10 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.svg",
   },
+  verification: {
+    // Token only — Next renders the <meta name="google-site-verification"> tag.
+    google: "CLftxND8VPrU0nqWW_IAlG17WbpOj-L-7GyFIfwQrBs",
+  },
 };
 
 export default function RootLayout({
