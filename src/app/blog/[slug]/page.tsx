@@ -21,18 +21,39 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) return {};
+
+  const path = `/blog/${post.slug}`;
+  const photo = await getPostImage(post, 1200);
+  // photo.src already carries "?auto=format&fit=crop&w=1200&q=80"; pin the
+  // height so the card is a proper 1.91:1 crop.
+  const ogImage = {
+    url: `${photo.src}&h=630`,
+    width: 1200,
+    height: 630,
+    alt: photo.alt,
+  };
+
   return {
     title: post.title,
     description: post.excerpt,
     alternates: {
-      canonical: `/blog/${post.slug}`,
+      canonical: path,
     },
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      url: `/blog/${post.slug}`,
+      url: path,
       type: "article",
       publishedTime: post.date,
+      authors: ["Amara Chukwu"],
+      section: post.category,
+      images: [ogImage],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      images: [ogImage.url],
     },
   };
 }

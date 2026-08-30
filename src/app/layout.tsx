@@ -40,6 +40,14 @@ export const metadata: Metadata = {
     url: SITE_URL,
     siteName: SITE_NAME,
     type: "website",
+    locale: "en_US",
+    // og:image / twitter:image default to app/opengraph-image.tsx site-wide.
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "DecorNest — A Quiet Place for Home Decor",
+    description:
+      "Interior design, organization, and product edits for people who like their homes unhurried.",
   },
   icons: {
     icon: "/favicon.svg",
