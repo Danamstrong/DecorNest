@@ -83,6 +83,14 @@ export default function RootLayout({
         <GoogleAnalytics
           gaId={process.env.NEXT_PUBLIC_GA_ID || "G-YMFQ68M6JK"}
         />
+        {/* Monetag — In-Page Push (zone 11686517) */}
+        <Script id="monetag-in-page-push" strategy="afterInteractive">
+          {`(function(s){s.dataset.zone='11686517',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))`}
+        </Script>
+        {/* Monetag — Vignette Banner (zone 11686522) */}
+        <Script id="monetag-vignette-banner" strategy="afterInteractive">
+          {`(function(s){s.dataset.zone='11686522',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))`}
+        </Script>
       </body>
     </html>
   );
