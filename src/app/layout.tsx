@@ -59,6 +59,7 @@ export const metadata: Metadata = {
   other: {
     "impact-site-verification": "b0235332-5ae2-408c-9b85-190ee66831c1",
     monetag: "9911b7f0e354fb31bda4d59839457e5c",
+    "p:domain_verify": "0fb8716ab1baf26ffc3edc2f3ea9d2e6",
   },
 };
 
