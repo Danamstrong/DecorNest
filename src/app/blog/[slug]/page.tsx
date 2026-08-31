@@ -24,10 +24,13 @@ export async function generateMetadata({
 
   const path = `/blog/${post.slug}`;
   const photo = await getPostImage(post, 1200);
-  // photo.src already carries "?auto=format&fit=crop&w=1200&q=80"; pin the
-  // height so the card is a proper 1.91:1 crop.
+  // Unsplash sources carry "?auto=format&fit=crop&w=1200&q=80"; pin the height
+  // so the card is a proper 1.91:1 crop. An explicit (non-Unsplash) image is
+  // used as-is — we can't ask its host to re-crop.
   const ogImage = {
-    url: `${photo.src}&h=630`,
+    url: photo.src.includes("images.unsplash.com")
+      ? `${photo.src}&h=630`
+      : photo.src,
     width: 1200,
     height: 630,
     alt: photo.alt,

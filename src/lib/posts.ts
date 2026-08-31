@@ -3,6 +3,89 @@ import { getInteriorPhoto, type Photo } from "./unsplash";
 
 export const posts: Post[] = [
   {
+    slug: "neutral-bedroom-decor-ideas",
+    title: "Neutral Bedroom Ideas That Will Transform Your Space",
+    excerpt:
+      "Neutral bedroom decor ideas that use warm tones and layered textures to make a small bedroom feel calmer and bigger.",
+    category: "Interior Design",
+    focusKeyword: "bedroom decor ideas",
+    image: "https://i.imgur.com/daHg8xR.jpg",
+    imageQuery: "neutral bedroom with taupe walls and layered linen bedding",
+    imageAlt:
+      "A neutral bedroom with warm taupe walls, a boucle headboard, layered oatmeal linen bedding, and a rattan nightstand",
+    readingTime: "9 min read",
+    date: "2026-08-31",
+    content: [
+      "Your bedroom doesn't need beige walls and a matching furniture set to feel neutral. The best bedroom decor ideas right now lean on texture, not just color: linen, boucle, rattan, brushed oak. Skip the flat, sterile look. Build a room that feels warm even without one bold hue.",
+      "A true neutral palette is not just white and gray. Think warm taupe, soft clay, oatmeal, and greige with black accents for contrast. These pairings photograph well and they hold up in real light, not just staged photos.",
+      "## Why Neutral Doesn't Mean Boring",
+      "Neutral bedroom decor ideas get a bad reputation because most people copy the wrong reference photo. A stark white room with a gray duvet and glass nightstands looks cold in person, even if it looks fine on a screen. Real warmth comes from mixing at least three textures in the same tonal family.",
+      "Think of a taupe wall next to a rattan headboard next to a chunky wool throw. None of those fight each other, but none of them are flat either. That contrast in texture, not color, is what makes a neutral room feel finished instead of unfinished.",
+      "> Tip: Test your paint choice on the actual wall, not just a small swatch card. Colors shift depending on how much natural light your room gets during the day.",
+      "A room built entirely from one shade of beige has nowhere for your eye to land. Add at least one deep tone, even if it's just a black lamp base or a dark walnut frame. The whole space reads as designed instead of default.",
+      "## Neutral Bedroom Ideas Worth Trying This Month",
+      "### 1. Swap Flat White Walls for Warm Taupe",
+      "Skip plain white and reach for a warm taupe like Balboa Mist or Repose Gray instead. These shades still read as neutral, but they have enough pigment to avoid looking sterile under yellow bulbs. A gallon covers about 400 square feet with two coats, so most bedrooms only need one can.",
+      "If commitment scares you, paint just the wall behind the headboard. That single accent wall shifts the whole room without the cost of repainting all four.",
+      "Quick paint pairings that hold up in real bedrooms:",
+      "- Balboa Mist walls with a walnut bed frame and oatmeal linens\n- Repose Gray walls with rattan accents and a black metal mirror\n- Alabaster walls with a boucle headboard and warm brass lighting",
+      "### 2. Choose Warm Wood Tones Over Cool Gray Wood",
+      "![Solid oak six-drawer dresser styled against a warm taupe wall in a neutral bedroom](https://i.imgur.com/DzkSU7R.jpg)",
+      "Cool gray-washed wood was everywhere five years ago, but it fights with warm neutrals instead of supporting them. Trade a gray dresser for one in honey oak, walnut, or reclaimed pine with visible grain.",
+      "Warm wood grounds a neutral room the same way a rug does. It gives the eye a natural texture to rest on between all that soft fabric and paint.",
+      "[Check Price on Amazon: Solid Oak 6-Drawer Dresser](https://amzn.to/4cDAZWL)",
+      "### 3. Add a Boucle or Linen Headboard",
+      "![Boucle upholstered headboard in oatmeal on a queen bed with layered neutral bedding](https://i.imgur.com/93gAA6E.jpg)",
+      "A fabric headboard does more for warmth than almost any other single piece in the room. Boucle in oatmeal or a stonewashed linen in warm white both soften the edges of an otherwise simple layout.",
+      "Look for a queen-size headboard between 54 and 60 inches wide so it doesn't overwhelm a standard queen frame. Anything narrower looks like an afterthought propped against the wall.",
+      "[Check Price on Amazon: Boucle Upholstered Queen Headboard](https://amzn.to/4x0C425)",
+      "### 4. Layer Bedding in Three Tonal Neutrals",
+      "![Bed layered with warm white sheets, a taupe quilted coverlet, and a cream knit throw folded at the foot](https://i.imgur.com/jndvK1Y.jpg)",
+      "One flat neutral duvet reads as plain, not calm. Layer a warm white base sheet, a taupe quilted coverlet, and a cream knit throw folded at the foot of the bed.",
+      "Mix at least two materials, like a matte cotton duvet with a nubby linen throw pillow. That contrast in finish keeps three shades of the same color family from blending into one dull blob. Wash new linen once before styling it. That first wash softens the fabric and removes the stiff, straight off the shelf look.",
+      "[Check Price on Amazon: Cream Waffle Knit Bedding Set](https://amzn.to/3UhHd8m)",
+      "### 5. Bring In Rattan or Cane for Texture",
+      "![Natural rattan two-drawer nightstand with a warm-toned ceramic lamp beside a taupe wall](https://i.imgur.com/5sQeJGG.jpg)",
+      "Rattan headboards, cane nightstands, and woven pendant shades all add warmth without adding color. A cane nightstand next to a taupe wall creates contrast through shadow and shape instead of hue.",
+      "Keep rattan pieces under $200 each if you are testing the look for the first time. Cheaper woven furniture holds up fine indoors, away from direct sun and humidity.",
+      "[Check Price on Amazon: 2-Drawer Natural Rattan Nightstand](https://amzn.to/4zSPQGO)",
+      "### 6. Use a Chunky Knit Throw and a Low-Pile Rug",
+      "![Chunky ivory knit throw draped over a bed corner above a low-pile ivory area rug](https://i.imgur.com/aq4nzNp.jpg)",
+      "A thin, flat rug photographs fine but feels cheap underfoot. Choose a low-pile wool or wool-blend rug at least 8 by 10 feet so it extends past the sides of the bed frame.",
+      "Pair it with a chunky knit throw in ivory or oatmeal draped across one corner of the bed. That single styling move photographs well and actually gets used on cold mornings.",
+      "[Check Price on Amazon: 8x10 Ivory Wool Blend Area Rug](https://amzn.to/3So495f)",
+      "### 7. Add Black or Bronze Metal for Contrast",
+      "![Matte black round mirror mounted above a dresser in an all-neutral bedroom](https://i.imgur.com/QfFt3t9.jpg)",
+      "An all-neutral room without a single dark accent tends to fade into the background. One black metal mirror frame, a bronze table lamp, or matte black door hardware gives the eye somewhere to land.",
+      "Keep the dark accent to one or two spots max. Three or more and the room starts to look like it's trying too hard.",
+      "[Check Price on Amazon: 30-Inch Matte Black Round Mirror](https://amzn.to/4x2KWUF)",
+      "### 8. Swap Framed Prints for Woven or Textile Wall Art",
+      "![Large neutral macrame wall hanging in warm white above an upholstered headboard](https://i.imgur.com/A6ZsvUB.jpg)",
+      "Framed prints work, but a woven wall hanging or a textile tapestry adds dimension that flat glass can't. Hang it slightly larger than you think, about two thirds the width of the headboard.",
+      "A macrame or jute piece in warm white ties back into the linen and rattan without adding a new color to track. A pair of smaller woven pieces stacked vertically works just as well if your wall is narrow.",
+      "[Check Price on Amazon: Large Neutral Macrame Wall Hanging](https://amzn.to/4yaii52)",
+      "### 9. Layer Lighting Instead of Relying on One Overhead Fixture",
+      "![Warm white ceramic table lamp rated 2700K on a nightstand casting soft light](https://i.imgur.com/MpdchvK.jpg)",
+      "A single ceiling light flattens every neutral tone in the room. Add a warm-toned table lamp on each nightstand, plus one floor lamp in a reading corner if space allows.",
+      "Stick to bulbs rated around 2700K. Anything cooler makes warm neutrals look gray and washes out the texture you just spent money adding.",
+      "[Check Price on Amazon: Ceramic Warm White Table Lamp](https://amzn.to/4gZTd7c)",
+      "### 10. Add a Textured Bench or Ottoman at the Foot of the Bed",
+      "![Boucle upholstered bench at the foot of a neutral bed with layered bedding](https://i.imgur.com/7CLvb6Q.jpg)",
+      "An empty stretch of floor at the foot of the bed makes a neutral room look unfinished, not minimal. A boucle or woven bench fills that gap and gives you a spot to sit while putting on shoes.",
+      "Measure your bed width first. A bench between 40 and 48 inches wide fits most queen frames without crowding the walkway.",
+      "[Check Price on Amazon: 44-Inch Boucle Bedroom Bench](https://amzn.to/4wX1U6U)",
+      "## Mistakes That Flatten a Neutral Bedroom",
+      "The most common mistake is matching everything too closely. A beige wall, beige bedding, and a beige rug in the exact same shade reads as one flat surface, not a styled room.",
+      "Cool undertones are another trap. Gray-based neutrals paired with warm wood furniture clash more than people expect, especially under warm bulbs at night.",
+      "Another mistake is skipping pattern altogether. A subtle stripe on a throw pillow or a soft plaid blanket keeps an all-neutral room from feeling like a hotel suite. You don't need bold pattern, just one quiet break from solid fabric.",
+      "Fix both by mixing at least three shades within the same warm family. Check your paint swatch under your actual bedroom lighting before buying a full gallon.",
+      "## Final Thought",
+      "You don't need a full renovation to make these bedroom decor ideas work. Swap one wall color, add one textured throw, and change your bulbs before you touch anything else.",
+      "Small, specific changes like these add up faster than people expect, and they cost less than a single piece of matching furniture.",
+      "Start with one room first before touching the rest of the house. A single well-styled neutral bedroom teaches you which pairings work in your own light. That lesson carries into every other room you tackle next.",
+    ],
+  },
+  {
     slug: "warm-minimalism-small-living-rooms",
     title: "Warm Minimalism: How to Decorate a Small Living Room Without It Feeling Empty",
     excerpt:
@@ -205,15 +288,19 @@ export function getPostBySlug(slug: string) {
 }
 
 /**
- * Resolve a post's photo from Unsplash at build time. The post's own
- * `imageAlt` wins over Unsplash's description; the slug seeds the pick so
- * each post gets a distinct, stable image. Falls back to a curated photo
- * when the API is unavailable.
+ * Resolve a post's photo. When the post carries an explicit `image` URL that
+ * source is used as-is (no attribution — it isn't an Unsplash pick).
+ * Otherwise the photo is pulled from Unsplash at build time, seeded by the
+ * slug so each post gets a distinct, stable image, with a curated fallback
+ * when the API is unavailable. The post's own `imageAlt` always wins.
  */
 export async function getPostImage(
-  post: Pick<Post, "slug" | "imageQuery" | "imageAlt">,
+  post: Pick<Post, "slug" | "imageQuery" | "imageAlt" | "image">,
   width = 1600,
 ): Promise<Photo> {
+  if (post.image) {
+    return { src: post.image, alt: post.imageAlt, credit: null };
+  }
   const photo = await getInteriorPhoto(post.imageQuery, { seed: post.slug, width });
   return { ...photo, alt: post.imageAlt };
 }

@@ -16,6 +16,12 @@ export interface Post {
   /** Curated alt text describing the intended subject; used in place of
    *  Unsplash's own (often terse) description. */
   imageAlt: string;
+  /** Explicit hero image URL. When set, the post skips the build-time
+   *  Unsplash lookup and uses this source directly (imageAlt still supplies
+   *  the alt text). Host must be allowed in `next.config.ts`. */
+  image?: string;
+  /** Primary SEO keyword this post is written to rank for. */
+  focusKeyword?: string;
   readingTime: string;
   date: string;
   featured?: boolean;
