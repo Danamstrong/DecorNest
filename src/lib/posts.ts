@@ -4,7 +4,7 @@ import { getInteriorPhoto, type Photo } from "./unsplash";
 export const posts: Post[] = [
   {
     slug: "farmhouse-bedroom-ideas",
-    title: "10 Farmhouse Bedroom Ideas You'll Want to Copy",
+    title: "13 Farmhouse Bedroom Ideas You'll Want to Copy",
     excerpt:
       "Farmhouse bedroom ideas that use warm wood, ticking stripe bedding, and black metal accents for a cozy, lived-in feel.",
     category: "Interior Design",
